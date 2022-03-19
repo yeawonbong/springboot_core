@@ -7,7 +7,10 @@ import hello.core.member.MemberServiceIml;
 
 public class MemberApp {
     public static void main(String[] args) {
-        MemberService memberService = new MemberServiceIml();
+
+        AppConfig appConfig = new AppConfig();
+        MemberService memberService = appConfig.memberService();
+//        MemberService memberService = new MemberServiceIml();
         Member member = new Member(1L, "memberA", Grade.VIP);
         memberService.join(member);
 
